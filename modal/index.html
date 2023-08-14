@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    
+    <button>Aparece MODAL!</button>
     <div class="modal">
         <div class="window">
             <button class="close">X</button>
@@ -20,6 +20,24 @@
             </div>
         </div>
     </div>
+    <script>
+        const modal = document.querySelector('.modal')
+        const close = modal.querySelector('.close')
+        const open = document.querySelector('button')
 
+        open.addEventListener('click', () => {
+            modal.classList.add("opened")
+        })
+
+        close.addEventListener('click', () => {
+            modal.classList.remove("opened")
+        })
+
+        modal.addEventListener('click', (e) => {
+            if (e.target.classList.contains("modal")) {
+                modal.classList.remove("opened")
+            }
+        })
+    </script>
 </body>
 </html>
